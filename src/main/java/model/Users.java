@@ -2,9 +2,6 @@ package model;
 
 import java.util.List;
 
-/**
- * Created by nallurip on 08/03/15.
- */
 public class Users {
     private String loginid;
     private String password;

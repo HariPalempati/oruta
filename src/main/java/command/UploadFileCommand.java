@@ -61,7 +61,7 @@ public class UploadFileCommand {
                     } catch (Exception e) {
                         System.out.println(e);
                     }
-                    X509V1Certificate certificate = new X509V1Certificate(); //It is showing error. Dependency should be added.
+                    X509v1Certificate certificate = new X509v1Certificate(); //It is showing error. Dependency should be added.
                     X509Certificate cert = certificate.getCertificate();
                     String[] s = String.valueOf(cert).split("Signature:");
                     preparedStatement1.setInt(3, tmp);
