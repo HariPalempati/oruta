@@ -61,16 +61,16 @@ public class UploadFileCommand {
                     } catch (Exception e) {
                         System.out.println(e);
                     }
-                    X509v1Certificate certificate = new X509v1Certificate(); //It is showing error. Dependency should be added.
-                    X509Certificate cert = certificate.getCertificate();
-                    String[] s = String.valueOf(cert).split("Signature:");
+                   // X509v1Certificate certificate = new X509v1Certificate(); //It is showing error. Dependency should be added.
+                    //X509Certificate cert = certificate.getCertificate();
+                    //String[] s = String.valueOf(cert).split("Signature:");
                     preparedStatement1.setInt(3, tmp);
-                    preparedStatement1.setString(4, s[1].trim());
+                    //preparedStatement1.setString(4, s[1].trim());
                     preparedStatement1.setInt(5, new Random().nextInt());
                     preparedStatement1.setInt(6, new Random().nextInt());
 
                     preparedStatement2.setInt(3, tmp);
-                    preparedStatement2.setString(4, s[1].trim());
+                    //preparedStatement2.setString(4, s[1].trim());
                     preparedStatement2.setInt(5, new Random().nextInt());
                     preparedStatement2.setInt(6, new Random().nextInt());
 
