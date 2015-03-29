@@ -134,7 +134,7 @@ public class LoginService {
 			LoginCommand command = new LoginCommand();
 			String loginString = null;
 			try {
-				loginString = mapper.writeValueAsString(command.execute(title));
+				loginString = mapper.writeValueAsString(command.execute());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
