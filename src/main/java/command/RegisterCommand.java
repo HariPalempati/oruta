@@ -1,13 +1,14 @@
 package command;
 
+import connectionprovider.ConnectionProvider;
+import model.Register;
+
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Register;
-import connectionprovider.ConnectionProvider;
 
 public class RegisterCommand {
 
