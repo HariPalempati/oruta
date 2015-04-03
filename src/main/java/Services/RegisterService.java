@@ -33,7 +33,7 @@ import util.Constants;
 public class RegisterService {
 	ObjectMapper mapper = new ObjectMapper();
 
-	// Add a song
+	// Registering User
 		@POST
 		@Produces({ MediaType.APPLICATION_JSON })
 		@Consumes({ MediaType.APPLICATION_JSON })

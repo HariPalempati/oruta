@@ -17,7 +17,7 @@ public class RegisterCommand {
 		try {
 			Connection connection = ConnectionProvider.getConnection();
 			PreparedStatement stmt = connection
-					.prepareStatement("INSERT INTO Register(FirstName, LastName, EmailId, Location, Username, Password, ConfirmPassword) VALUES(?, ?, ?, ?, ?, ?, ?) Returning id");
+					.prepareStatement("INSERT INTO Register(FirstName, LastName, EmailId, Location, Username, Password, ConfirmPassword, Usertype) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 			stmt.setString(1, u.getFirstName());
 			stmt.setString(2, u.getLastName());
 			stmt.setString(3, u.getEmailId());
@@ -25,11 +25,11 @@ public class RegisterCommand {
 			stmt.setString(5, u.getUsername());
 			stmt.setString(6, u.getPassword());
 			stmt.setString(7, u.getConfirmPassword());
-	//		stmt.setString(8, u.getUsertype());
+			stmt.setString(8, u.getUsertype());
 			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
-				return rs.getString("Usertype");
-			}
+//			while (rs.next()) {
+//				return rs.getString("Usertype");
+//			}
 
 		} catch (URISyntaxException e) {
 			e.printStackTrace();

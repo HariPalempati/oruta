@@ -42,7 +42,7 @@ $(document).ready(function(){
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 dataType: "json",
-                success: function (data, status, jqXHR) {
+                success: function (data, status,jqXHR ) {
                     alert("success");
                 },
                 error: function (jqXHR, status) {
@@ -55,7 +55,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<h1 style="text-align:center;">Create a new Song</h1>
+<h1 style="text-align:center;">Registration Form</h1>
 <form id="Register_form">
 <div class="Register_form"></div>
 First Name:
@@ -87,7 +87,14 @@ Confirm Password:
 <br>
 </br>
 
-
+User Type:
+<select>
+<option value="option"> select any option </option>
+<option value="Owner"> Owner </option>
+<option value="User"> User </option>
+</select>
+<br>
+</br>
 
 <input type="Submit">
 </form>
