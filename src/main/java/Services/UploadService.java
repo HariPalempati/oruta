@@ -67,3 +67,18 @@ import util.Constants;
 			return Response.status(200).build();
 		}
 	}
+//    @GET
+//	@Path("metadata")
+//	@Produces({ MediaType.APPLICATION_JSON })
+//	public Response getUploadMeta() {
+//		Upload u = new Upload();
+//		try {
+//			@SuppressWarnings("unchecked")
+//			HashMap rHM = mapper.convertValue(u, HashMap.class);
+//			rHM.remove("id");
+//			return Response.status(200).entity(mapper.writeValueAsString(rHM)).build();
+//		} catch (JsonProcessingException e) {
+//			e.printStackTrace();
+//		}
+//		return Response.status(500).build();
+//	}
