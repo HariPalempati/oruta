@@ -17,12 +17,11 @@ public class LoginCommand {
             Connection connection = ConnectionProvider.getConnection();
 
             PreparedStatement stmt = connection
-                    .prepareStatement("select * from userlogin where" +
-
-                            "loginid=" + "'"+ l.getUsername()  +"'" +
-                            "and password=" + "'"+ l.getPassword() +"'" +
-                            "and logintype=" + "'"+ l.getUsertype().toLowerCase() +"'"
-                    );
+                    .prepareStatement("select * from Register where Username =  ? and Password = ? and Usertype = ?");
+            
+            		stmt.setString(1, l.getUsername());
+            		stmt.setString(2, l.getPassword());
+            		stmt.setString(3, l.getUsertype());
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
