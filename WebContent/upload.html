@@ -1,6 +1,63 @@
-
+<!DOCTYPE html>
 <html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js">
+</script>
+<script>
+//we are reusing this URL, somove it to a variable
+base_url="http://localhost:8082/oruta/rest/Register";
+//meta_url="http://localhost:8082/oruta/rest/song/metadata/";
+$(document).ready(function(){
+//     $.getJSON(meta_url,function(data){  
+//         $.each(data, function(key, value){
+//           $("div.song_form").append("<br/>Please enter " + key + ":"+"<input type='text' name='"+key+"'"+">");
+//         });
+//     });
+    $.fn.serializeObject = function()
+    {
+       var o = {};
+       var a = this.serializeArray();
+       $.each(a, function() {
+           if (o[this.name]) {
+               if (!o[this.name].push) {
+                   o[this.name] = [o[this.name]];
+               }
+               o[this.name].push(this.value || '');
+           } else {
+               o[this.name] = this.value || '';
+           }
+       });
+       return o;
+    };
+    $('#Register_form').submit(function(){
+      console.log($('#Register_form').serializeObject());
+      postData($('#Register_form').serializeObject());
+      return false;
+    });
+    function postData(data){
+        $.ajax({
+                type: "POST",
+                url: "http://localhost:8082/oruta/rest/Register",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                crossDomain: true,
+                dataType: "json",
+                success: function (data, status,jqXHR ) {
+                    alert("success");
+                },
+                error: function (jqXHR, status) {
+                    console.log(jqXHR);
+                    alert('failed, please check console for errors');
+                }
+             });
+       }
+});
+</script>
+</head>
 <body>
+<h1 style="text-align:center;">Registration Form</h1>
+<form id="Upload_form">
+<div class="Upload_form"></div>
 <form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data">
   <input type="file" name="fileField"><br /><br />
 <form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data">
@@ -8,5 +65,11 @@
   <input type="submit" name="submit" value="Submit">
 </form>
 </form>
+<input type="Submit">
+</form>
 </body>
 </html>
+
+
+
+
