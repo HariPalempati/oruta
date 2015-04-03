@@ -17,7 +17,7 @@ public class RegisterCommand {
 		try {
 			Connection connection = ConnectionProvider.getConnection();
 			PreparedStatement stmt = connection
-					.prepareStatement("INSERT INTO SONGS(title, artist) VALUES(?, ?) Returning id");
+					.prepareStatement("INSERT INTO Register(FirstName, LastName, EmailId, Location, Username, Password, ConfirmPassword, Usertype) VALUES(?, ?, ?, ?, ?, ?, ?, ?) Returning id");
 			stmt.setString(1, u.getFirstName());
 			stmt.setString(2, u.getLastName());
 			stmt.setString(3, u.getEmailId());
