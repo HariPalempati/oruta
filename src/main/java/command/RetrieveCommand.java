@@ -17,7 +17,7 @@ public class RetrieveCommand {
 		try {
 			conn = ConnectionProvider.getConnection();
 			PreparedStatement stmt = conn
-					.prepareStatement("SELECT FILE FROM FILES WHERE FILENAME=?");
+					.prepareStatement("SELECT FileName FROM Retrieve WHERE FILENAME=?");
 			stmt.setString(1, filename);
 			ResultSet rs = stmt.executeQuery();
 	        if (rs != null) {
