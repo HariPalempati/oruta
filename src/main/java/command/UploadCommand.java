@@ -19,9 +19,9 @@ public class UploadCommand {
 			byte[] filecontent = output.toByteArray();
 			Connection connection = ConnectionProvider.getConnection();
 			PreparedStatement stmt = connection
-					.prepareStatement("INSERT INTO Upload VALUES (?, ?)");
-			stmt.setString(1, Username);
-			stmt.setBytes(2, FileName);
+					.prepareStatement("INSERT INTO  VALUES (?, ?)");
+			stmt.setString(1, fileName);
+			stmt.setBytes(2, filecontent);
 			stmt.executeUpdate();
 
 		} catch (Exception e) {
