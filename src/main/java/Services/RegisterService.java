@@ -17,15 +17,7 @@ import javax.ws.rs.core.Response;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-//import model.Song;
 import model.Register;
-//import command.CreateSongCommand;
-//import command.DeleteSongCommand;
-//import command.GetSongCommand;
-//import command.ListSongsCommand;
-//import command.SearchSongCommand;
-//import command.UpdateSongCommand;
 import command.RegisterCommand;
 import util.Constants;
 

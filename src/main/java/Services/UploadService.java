@@ -21,14 +21,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 	import com.fasterxml.jackson.databind.ObjectMapper;
 
-//import model.Song;
 	import model.Register;
-	//import command.CreateSongCommand;
-	//import command.DeleteSongCommand;
-	//import command.GetSongCommand;
-	//import command.ListSongsCommand;
-	//import command.SearchSongCommand;
-	//import command.UpdateSongCommand;
 	import command.UploadCommand;
 	import command.RetrieveCommand;
 import util.Constants;
@@ -37,6 +30,19 @@ import util.Constants;
 	public class UploadService {
 		ObjectMapper mapper = new ObjectMapper();
 
+		
+		@POST
+		@Path("/upload/db")
+		@Consumes(MediaType.MULTIPART_FORM_DATA)
+		public Response uploadDBFile(
+			@FormDataParam("file") InputStream uploadedInputStream,
+			@FormDataParam("file") FormDataContentDisposition fileDetail) {
+	 
+			UploadCommand cmd = new UploadCommand();
+			cmd.execute(fileDetail.getFileName(), uploadedInputStream, fileDetail.getSize());
+			return Response.status(200).build();
+		}
+		
 		@GET
 		@Path("inline/{filename}")
 		@Produces("image/*")
@@ -52,19 +58,6 @@ import util.Constants;
 			} catch (Exception e) {
 				return Response.status(404).entity(e.getMessage()).build();
 			}
-		}
-
-		
-		@POST
-		@Path("/upload/db")
-		@Consumes(MediaType.MULTIPART_FORM_DATA)
-		public Response uploadDBFile(
-			@FormDataParam("file") InputStream uploadedInputStream,
-			@FormDataParam("file") FormDataContentDisposition fileDetail) {
-	 
-			UploadCommand cmd = new UploadCommand();
-			cmd.execute(fileDetail.getFileName(), uploadedInputStream, fileDetail.getSize());
-			return Response.status(200).build();
 		}
 	}
 //    @GET
