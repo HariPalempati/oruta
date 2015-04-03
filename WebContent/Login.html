@@ -44,7 +44,10 @@ $(document).ready(function(){
                 dataType: "json",
                 success: function (data, status,jqXHR ) {
                     alert("success");
+                    ("input:text").val("Owner");
                     alert.open("Owner.html");
+                    ("input:text").val("User");
+                    alert.open("User.html");
                 },
                 error: function (jqXHR, status) {
                     console.log(jqXHR);

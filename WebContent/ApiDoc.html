@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<fieldset>
+<h1 style="text-align:center;">API DOCUMENTATION</h1>
+</fieldset>
+<br>
+<fieldset>
+<h2 style="text-align:center;">1. Registeration Process </h2>
+
+<h3> "rest/Register/Register"</h3>
+
+@POST:<br>
+<p>
+This rest service takes the inputs which were entered by the user inorderto register, these inputs will be stored to database
+Parameters consumed : { FirstName : " ", LastName : " ", EmailId : " ", Location : " ", Username : " ", Password : " ", ConfirmPassword : " ", Usertype : " "
+User must enter all the fields and finally when clicks submit button, all the information will be stored to database
+</p>
+<br>
+<p>
+Here, Usertype is to specify particular user, whether he is owner or user; If he is the owner, he has the capibility to upload the file, while he is user, he has the capability to search and can download files.
+</p>
+</fieldset>
+<br>
+
+<fieldset>
+<h2 style="text-align:center;">2.  Login Process</h2>
+<h3>"rest/Login/Login"</h3>
+@GET :<br>
+<p>
+This rest service will get login information from database, by which user can login into his account
+</p>
+<br>
+<p>
+Here, The information which rest service brings will now matches to the information entered by the user, If they match, user can into his account successfully.
+<br>
+Parameters : { Username : " ", Password : " ", Usertype : " "}
+</p>
+</fieldset>
+<br>
+<fieldset>
+<h2 style="text-align:center;">3. Uploading Process</h2>
+<h3>"rest/Upload"</h3>
+@POST
+<br>
+<p>
+This rest service takes the inputs which were entered by the user inorderto store files, these inputs will be stored to database
+<br>
+Parameters consumed : { Username : " ", FileName : " "}
+</p>
+<br>
+<p>
+Owner can upload his files by clicking on upload button.
+</p>
+</fieldset>
+<br>
+
+<fieldset>
+<h2 style="text-align:center;">4. Retrieval Process : Search by Username</h2>
+<h3>"rest/Retrieve/get/{Username}"</h3>
+@GET :
+<br>
+<p>
+This rest service is used to retrieve infromation from database, we can search by Username
+</p>
+<br>
+<p>
+Here, we have a textbox, where we can enter Username by which we can search database, If it matches all the files will be displayed belonging to the Username
+Parameters : {Search : " " }
+</p>
+</fieldset>
+<br>
+
+<fieldset>
+<h2 style="text-align:center;">5.  Retrieval Process : Search by Filename</h2>
+<h3>"rest/Retrieve/DOWNLOAD/{filename}"</h3>
+@GET :
+<br>
+<p>
+This rest service is used to retrieve infromation from database, we can search by filename
+</p>
+<br>
+<p>
+Here, we have a textbox, where we can enter filename by which we can search database, If it matches all the files will be displayed 
+Parameters : {Search : " " }
+</p>
+<p>
+Here, we have a textbox, where we can enter filename by which we can search database, If it matches all the files will be displayed 
+Parameters : {Search : " " }
+</p>
+</fieldset>
+<br>
+<fieldset>
+<h2 style="text-align:center;">Algorithm Used in My Project</h2>
+<br>
+
+<p>
+HARS can be abbreviated as “Homomorphic Authenticable Ring Signatures”. This mechanism mainly involves with four algorithms:
+•	KeyGen
+•	SignGen
+•	GenProof
+•	VerifyProof
+</p>
+<p>
+KeyGen :
+	This algorithm mainly generates two keys a public key and a private key. When A tries to send his data onto cloud, In the first step the whole data will passes through this algorithm i.e; this algorithm will be implemented on the data by which the data will be encrypted by producing two keys, a public key and a private key.
+</p>
+<p>
+SignGen :
+	In the second step, this algorithm will be implemented on encrypted data, by which the whole data will be divided into blocks and each block will gets signed and now these blocks which has a signature and the encrypted data will be placed into the cloud. The whole data is now encrypted.
+</p>
+<p>
+GenProof :
+	Here A will generate a key by using this algorithm and this key is send to Auditor who is going to verify whether there is any data loss or not.
+</p>
+<p>
+VerifyProof :
+	This is the final step, where Auditor will request cloud to send the data and then the cloud will respond to auditor by sending a selected blocks which were signed and encrypted. (Note: selection of blocks is random). Now, Auditor will verify the data send by cloud by using this algorithm, whenever auditor implemented this algorithm on the data, a key will be generated. And now he will verify this key and key which was sent by A. If the Key matches, then the whole data is safe and no data loss has been occurred, If the key doesn’t matches, there will be data loss and Auditor notifies A that he should the whole data again.
+
+</p>
+<br>
+
+</fieldset>
+</body>
+</html>

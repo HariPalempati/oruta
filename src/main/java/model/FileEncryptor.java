@@ -20,8 +20,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class FileEncryptor {
 	protected static final String ALGORITHM = "RSA";
-	static PrivateKey privKey;
-	static PublicKey pubKey;
+	public static PrivateKey privKey;
+	public static PublicKey pubKey;
 	private String algo;
 	private File file;
 

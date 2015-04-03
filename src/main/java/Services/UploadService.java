@@ -22,8 +22,8 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 	import com.fasterxml.jackson.databind.ObjectMapper;
 
 	import model.Register;
-	import command.UploadCommand;
-	import command.RetrieveCommand;
+import command.UploadCommand;
+import command.RetrieveCommand;
 import util.Constants;
 
 	@Path("Upload")
@@ -46,10 +46,10 @@ import util.Constants;
 		@GET
 		@Path("inline/{filename}")
 		@Produces("image/*")
-		public Response renderFile(@PathParam("filename") String filename) {
+		public Response renderFile(@PathParam("filename") Byte filename) {
 			try {
 				RetrieveCommand getFile = new RetrieveCommand();
-				InputStream is = getFile.execute(filename);
+				ArrayList is = getFile.execute(filename);
 
 				ResponseBuilder response = Response.ok((Object) is);
 				response.header("Content-Disposition", "inline; filename=\""

@@ -1,6 +1,6 @@
 package command;
 
-import connectionprovider.ConnectionProvider;
+import connectionProvider.ConnectionProvider;
 import model.Register;
 
 import java.net.URISyntaxException;
@@ -26,6 +26,7 @@ public class RegisterCommand {
 			stmt.setString(6, u.getPassword());
 			stmt.setString(7, u.getConfirmPassword());
 			stmt.setString(8, u.getUsertype());
+			@SuppressWarnings("unused")
 			ResultSet rs = stmt.executeQuery();
 //			while (rs.next()) {
 //				return rs.getString("Usertype");

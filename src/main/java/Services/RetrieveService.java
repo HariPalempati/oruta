@@ -34,7 +34,7 @@ public class RetrieveService {
 		RetrieveCommand command = new RetrieveCommand();
 		String FileString = null;
 		try {
-			FileString = mapper.writeValueAsString(command.execute(Username));
+			FileString = mapper.writeValueAsString(command.execute(null));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,10 +46,10 @@ public class RetrieveService {
 @GET
 	@Path("DOWNLOAD/{filename}")
 	@Produces(MediaType.WILDCARD)
-	public Response getFile(@PathParam("filename") String filename) {
+	public Response getFile(@PathParam("filename") Byte filename) {
 		try {
 			RetrieveCommand getFile = new RetrieveCommand();
-			InputStream is = getFile.execute(filename);
+			ArrayList is = getFile.execute(filename);
 
 			ResponseBuilder response = Response.ok((Object) is);
 			response.header("Content-Disposition", "attachment; filename=\""

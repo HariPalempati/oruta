@@ -21,6 +21,7 @@ import model.Register;
 import command.RegisterCommand;
 import util.Constants;
 
+@SuppressWarnings("unused")
 @Path("Register")
 public class RegisterService {
 	ObjectMapper mapper = new ObjectMapper();
