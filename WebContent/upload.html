@@ -5,7 +5,7 @@
 </script>
 <script>
 //we are reusing this URL, somove it to a variable
-base_url="http://localhost:8082/oruta/rest/Register";
+base_url="http://localhost:8082/oruta/rest/Upload";
 //meta_url="http://localhost:8082/oruta/rest/song/metadata/";
 $(document).ready(function(){
 //     $.getJSON(meta_url,function(data){  
@@ -29,15 +29,15 @@ $(document).ready(function(){
        });
        return o;
     };
-    $('#Register_form').submit(function(){
-      console.log($('#Register_form').serializeObject());
-      postData($('#Register_form').serializeObject());
+    $('#Upload_form').submit(function(){
+      console.log($('#Upload_form').serializeObject());
+      postData($('#Upload_form').serializeObject());
       return false;
     });
     function postData(data){
         $.ajax({
                 type: "POST",
-                url: "http://localhost:8082/oruta/rest/Register",
+                url: "http://localhost:8082/oruta/rest/Upload",
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
