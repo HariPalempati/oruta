@@ -43,3 +43,18 @@ public class RetrieveService {
 		}
 }
 }
+//@GET
+//@Path("metadata")
+//@Produces({ MediaType.APPLICATION_JSON })
+//public Response getRetrieveMeta() {
+//	Retrieve u = new Retrieve();
+//	try {
+//		@SuppressWarnings("unchecked")
+//		HashMap rHM = mapper.convertValue(u, HashMap.class);
+//		rHM.remove("id");
+//		return Response.status(200).entity(mapper.writeValueAsString(rHM)).build();
+//	} catch (JsonProcessingException e) {
+//		e.printStackTrace();
+//	}
+//	return Response.status(500).build();
+//}

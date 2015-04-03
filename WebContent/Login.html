@@ -34,10 +34,10 @@ $(document).ready(function(){
       postData($('#Login_form').serializeObject());
       return false;
     });
-    function postData(data){
+    function getData(data){
         $.ajax({
-                type: "POST",
-                url: "http://localhost:8082/oruta/rest/Register",
+                type: "GET",
+                url: "http://localhost:8082/oruta/rest/Login",
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
