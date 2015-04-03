@@ -14,7 +14,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 //import model.Song;
 import model.Register;
@@ -27,7 +29,7 @@ import model.Register;
 import command.RegisterCommand;
 import util.Constants;
 
-@Path("song")
+@Path("Register")
 public class RegisterService {
 	ObjectMapper mapper = new ObjectMapper();
 
@@ -54,6 +56,22 @@ public class RegisterService {
 			return Response.status(200).entity(i).build();
 		}
 }
+//	    @GET
+//		@Path("metadata")
+//		@Produces({ MediaType.APPLICATION_JSON })
+//		public Response getRegisterMeta() {
+//			Register u = new Register();
+//			try {
+//				@SuppressWarnings("unchecked")
+//				HashMap rHM = mapper.convertValue(u, HashMap.class);
+//				rHM.remove("id");
+//				return Response.status(200).entity(mapper.writeValueAsString(rHM)).build();
+//			} catch (JsonProcessingException e) {
+//				e.printStackTrace();
+//			}
+//			return Response.status(500).build();
+//		}
+
 //	// Browse all songs
 //	@GET
 //	@Produces({ MediaType.APPLICATION_JSON })
