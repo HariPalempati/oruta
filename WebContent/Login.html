@@ -31,7 +31,7 @@ $(document).ready(function(){
     };
     $('#Login_form').submit(function(){
       console.log($('#Login_form').serializeObject());
-      postData($('#Login_form').serializeObject());
+      getData($('#Login_form').serializeObject());
       return false;
     });
     function getData(data){
@@ -44,6 +44,7 @@ $(document).ready(function(){
                 dataType: "json",
                 success: function (data, status,jqXHR ) {
                     alert("success");
+                    alert.open("Owner.html");
                 },
                 error: function (jqXHR, status) {
                     console.log(jqXHR);
@@ -55,10 +56,12 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<fieldset>
 <h1 style="text-align:center;">Login Form</h1>
+</fieldset>
 <form id="Login_form">
 <div class="Login_form"></div>
-
+<fieldset>
  User name:
 <input type="text" name="Username">
 <br>
@@ -76,8 +79,10 @@ User Type:
 </select>
 <br>
 </br>
-
+</fieldset>
+<fieldset>
 <input type="Submit">
+</fieldset>
 </form>
 </body>
 </html>

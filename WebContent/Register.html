@@ -44,6 +44,7 @@ $(document).ready(function(){
                 dataType: "json",
                 success: function (data, status,jqXHR ) {
                     alert("success");
+                    alert.open("Login.html");
                 },
                 error: function (jqXHR, status) {
                     console.log(jqXHR);
@@ -55,9 +56,12 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<fieldset>
 <h1 style="text-align:center;">Registration Form</h1>
+</fieldset>
 <form id="Register_form">
 <div class="Register_form"></div>
+<fieldset>
 First Name:
 <input type="text" name="FirstName">
 <br>
@@ -95,8 +99,10 @@ User Type:
 </select>
 <br>
 </br>
-
+</fieldset>
+<fieldset>
 <input type="Submit">
+</fieldset>
 </form>
 </body>
 </html>
