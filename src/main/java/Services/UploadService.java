@@ -33,7 +33,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 	import command.RetrieveCommand;
 import util.Constants;
 
-	@Path("song")
+	@Path("Upload")
 	public class UploadService {
 		ObjectMapper mapper = new ObjectMapper();
 

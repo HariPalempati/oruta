@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js">
+</script>
+<script>
+//we are reusing this URL, somove it to a variable
+base_url="http://localhost:8082/oruta/rest/Login";
+//meta_url="http://localhost:8082/oruta/rest/song/metadata/";
+$(document).ready(function(){
+//     $.getJSON(meta_url,function(data){  
+//         $.each(data, function(key, value){
+//           $("div.song_form").append("<br/>Please enter " + key + ":"+"<input type='text' name='"+key+"'"+">");
+//         });
+//     });
+    $.fn.serializeObject = function()
+    {
+       var o = {};
+       var a = this.serializeArray();
+       $.each(a, function() {
+           if (o[this.name]) {
+               if (!o[this.name].push) {
+                   o[this.name] = [o[this.name]];
+               }
+               o[this.name].push(this.value || '');
+           } else {
+               o[this.name] = this.value || '';
+           }
+       });
+       return o;
+    };
+    $('#Login_form').submit(function(){
+      console.log($('#Login_form').serializeObject());
+      postData($('#Login_form').serializeObject());
+      return false;
+    });
+    function postData(data){
+        $.ajax({
+                type: "POST",
+                url: "http://localhost:8082/oruta/rest/Register",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                crossDomain: true,
+                dataType: "json",
+                success: function (data, status,jqXHR ) {
+                    alert("success");
+                },
+                error: function (jqXHR, status) {
+                    console.log(jqXHR);
+                    alert('failed, please check console for errors');
+                }
+             });
+       }
+});
+</script>
+</head>
 <body>
-    <div id="form">
-            </center>
-          <form method ="post" action=" ">
-          User name:
-<input type="text" name="username">
+<h1 style="text-align:center;">Login Form</h1>
+<form id="Login_form">
+<div class="Login_form"></div>
+
+ User name:
+<input type="text" name="Username">
 <br>
 </br>
 password:
-<input type="password" name="psw">
+<input type="password" name="Password">
 <br>
 </br>
+
 User Type:
 <select>
 <option value="option"> select any option </option>
@@ -20,10 +76,12 @@ User Type:
 </select>
 <br>
 </br>
-            <fieldset>
-            <input class="btn" name="submit" type="Submit" value="Login"/>
-            </fieldset>
-      </form>
-    </div>
+
+<input type="Submit">
+</form>
 </body>
 </html>
+
+
+
+

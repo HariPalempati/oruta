@@ -23,7 +23,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 	import command.RetrieveCommand;
 import util.Constants;
-@Path("song")
+@Path("Retrieve")
 public class RetrieveService {
 	ObjectMapper mapper = new ObjectMapper();
 @GET
