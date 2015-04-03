@@ -21,11 +21,29 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 	import com.fasterxml.jackson.databind.ObjectMapper;
 
+import command.GetSongCommand;
 	import command.RetrieveCommand;
 import util.Constants;
 @Path("Retrieve")
 public class RetrieveService {
 	ObjectMapper mapper = new ObjectMapper();
+	
+	@GET
+	@Path("get/{Username}")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response getRetrieve(@PathParam("Username") String Username) {
+		RetrieveCommand command = new RetrieveCommand();
+		String FileString = null;
+		try {
+			FileString = mapper.writeValueAsString(command.execute(Username));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Response.status(200).entity(FileString).build();
+	}
+
+	
+	
 @GET
 	@Path("DOWNLOAD/{filename}")
 	@Produces(MediaType.WILDCARD)
