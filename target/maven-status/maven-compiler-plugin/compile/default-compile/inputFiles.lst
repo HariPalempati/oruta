@@ -1,9 +1,9 @@
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\Services\LoginService.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\CipherExample.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\util\Constants.java
-C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\Email.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\EncryptFileUtil.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\FileEncryptor.java
+C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\Upload.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\Services\UploadService.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\Login.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\DecryptFileUtil.java
@@ -18,4 +18,3 @@ C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\command\RegisterCommand.
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\Services\RegisterService.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\Services\RetrieveService.java
 C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\command\RetrieveCommand.java
-C:\Users\Palempati\workspace-MySAAS\oruta\src\main\java\model\GmailApiQuickStart.java
